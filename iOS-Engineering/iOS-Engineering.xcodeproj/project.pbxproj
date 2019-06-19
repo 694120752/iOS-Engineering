@@ -15,6 +15,8 @@
 		F70282AE2266D754006A8043 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F70282AD2266D754006A8043 /* main.m */; };
 		F70282B82266D754006A8043 /* iOS_EngineeringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F70282B72266D754006A8043 /* iOS_EngineeringTests.m */; };
 		F70282C32266D754006A8043 /* iOS_EngineeringUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F70282C22266D754006A8043 /* iOS_EngineeringUITests.m */; };
+		F740CCF322B9D69100F92DAA /* SNDelayImageDto.m in Sources */ = {isa = PBXBuildFile; fileRef = F740CCF222B9D69100F92DAA /* SNDelayImageDto.m */; };
+		F740CCF622B9D8E100F92DAA /* SNDelayImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F740CCF522B9D8E100F92DAA /* SNDelayImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		F70282BE2266D754006A8043 /* iOS-EngineeringUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-EngineeringUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70282C22266D754006A8043 /* iOS_EngineeringUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_EngineeringUITests.m; sourceTree = "<group>"; };
 		F70282C42266D754006A8043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F740CCF122B9D69100F92DAA /* SNDelayImageDto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNDelayImageDto.h; sourceTree = "<group>"; };
+		F740CCF222B9D69100F92DAA /* SNDelayImageDto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNDelayImageDto.m; sourceTree = "<group>"; };
+		F740CCF422B9D8E100F92DAA /* SNDelayImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNDelayImage.h; sourceTree = "<group>"; };
+		F740CCF522B9D8E100F92DAA /* SNDelayImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNDelayImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		F702829D2266D753006A8043 /* iOS-Engineering */ = {
 			isa = PBXGroup;
 			children = (
+				F740CCEF22B9D61F00F92DAA /* TempComponents */,
 				F702829E2266D753006A8043 /* AppDelegate.h */,
 				F702829F2266D753006A8043 /* AppDelegate.m */,
 				F70282A12266D753006A8043 /* ViewController.h */,
@@ -130,6 +137,25 @@
 				F70282C42266D754006A8043 /* Info.plist */,
 			);
 			path = "iOS-EngineeringUITests";
+			sourceTree = "<group>";
+		};
+		F740CCEF22B9D61F00F92DAA /* TempComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F740CCF022B9D63B00F92DAA /* DelayImage */,
+			);
+			path = TempComponents;
+			sourceTree = "<group>";
+		};
+		F740CCF022B9D63B00F92DAA /* DelayImage */ = {
+			isa = PBXGroup;
+			children = (
+				F740CCF122B9D69100F92DAA /* SNDelayImageDto.h */,
+				F740CCF222B9D69100F92DAA /* SNDelayImageDto.m */,
+				F740CCF422B9D8E100F92DAA /* SNDelayImage.h */,
+				F740CCF522B9D8E100F92DAA /* SNDelayImage.m */,
+			);
+			path = DelayImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F70282A32266D753006A8043 /* ViewController.m in Sources */,
+				F740CCF622B9D8E100F92DAA /* SNDelayImage.m in Sources */,
 				F70282AE2266D754006A8043 /* main.m in Sources */,
+				F740CCF322B9D69100F92DAA /* SNDelayImageDto.m in Sources */,
 				F70282A02266D753006A8043 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
