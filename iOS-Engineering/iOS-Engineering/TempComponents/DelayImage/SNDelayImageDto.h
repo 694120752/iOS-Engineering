@@ -18,6 +18,8 @@ typedef NS_ENUM(NSInteger, SNDelayImageType) {
     SNDelayImageTypeImagUrled       = 1
 };
 
+
+
 @interface SNDelayImageDto : NSObject
 @property(nonatomic, assign) SNDelayImageType imgType;
 

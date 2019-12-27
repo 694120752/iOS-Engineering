@@ -84,6 +84,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F70277E623B5E57600598E5D /* EagleEye */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EagleEye;
+			sourceTree = "<group>";
+		};
 		F70282922266D753006A8043 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +149,7 @@
 		F740CCEF22B9D61F00F92DAA /* TempComponents */ = {
 			isa = PBXGroup;
 			children = (
+				F70277E623B5E57600598E5D /* EagleEye */,
 				F740CCF022B9D63B00F92DAA /* DelayImage */,
 			);
 			path = TempComponents;
