@@ -15,6 +15,24 @@
 @implementation AppDelegate
 
 
+////保存keywindow,保证弹窗消失还原keywindow到主界面
+//- (void)getPreviouseWindow
+//{
+//    /*
+//     这里使用[UIApplication sharedApplication].delegate而不使用[UIApplication sharedApplication].keyWindow，是因为
+//     [UIApplication sharedApplication].keyWindow在makeKeyAndVisible之后才有效，viewWillAppear和之前的之前都是无效的，且易购工程
+//     [UIApplication sharedApplication].window是最后launcher.window赋值的，有些弹框在didFinishLaunchingWithOptions完成前就要弹出，比如隐私
+//     */
+//    if([UIApplication sharedApplication].delegate.window){
+//        self.previouseWindow = [UIApplication sharedApplication].delegate.window;
+//    }else{
+        // SN_APPCONTEXT_GET_APPLAUNCHER 为获取SNAppLauncher
+        //SNAppLauncher 为系统didFinishLaunchingWithOptions 之前做的操作
+//        SN_APPCONTEXT_GET_APPLAUNCHER(launcher);
+//        self.previouseWindow = launcher.window;
+//    }
+//}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     return YES;

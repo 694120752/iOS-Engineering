@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F70277E923B5E9D300598E5D /* UIView+trickPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F70277E723B5E9D300598E5D /* UIView+trickPoint.m */; };
+		F70277ED23B5EDED00598E5D /* LearnCalayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F70277EC23B5EDED00598E5D /* LearnCalayer.m */; };
 		F70282A02266D753006A8043 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F702829F2266D753006A8043 /* AppDelegate.m */; };
 		F70282A32266D753006A8043 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70282A22266D753006A8043 /* ViewController.m */; };
 		F70282A62266D753006A8043 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70282A42266D753006A8043 /* Main.storyboard */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F70277E723B5E9D300598E5D /* UIView+trickPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+trickPoint.m"; sourceTree = "<group>"; };
+		F70277E823B5E9D300598E5D /* UIView+trickPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+trickPoint.h"; sourceTree = "<group>"; };
+		F70277EB23B5EDED00598E5D /* LearnCalayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LearnCalayer.h; sourceTree = "<group>"; };
+		F70277EC23B5EDED00598E5D /* LearnCalayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnCalayer.m; sourceTree = "<group>"; };
 		F702829B2266D753006A8043 /* iOS-Engineering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Engineering.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F702829E2266D753006A8043 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F702829F2266D753006A8043 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -87,8 +93,19 @@
 		F70277E623B5E57600598E5D /* EagleEye */ = {
 			isa = PBXGroup;
 			children = (
+				F70277E823B5E9D300598E5D /* UIView+trickPoint.h */,
+				F70277E723B5E9D300598E5D /* UIView+trickPoint.m */,
 			);
 			path = EagleEye;
+			sourceTree = "<group>";
+		};
+		F70277EA23B5EC7000598E5D /* CalayerAbout */ = {
+			isa = PBXGroup;
+			children = (
+				F70277EB23B5EDED00598E5D /* LearnCalayer.h */,
+				F70277EC23B5EDED00598E5D /* LearnCalayer.m */,
+			);
+			path = CalayerAbout;
 			sourceTree = "<group>";
 		};
 		F70282922266D753006A8043 = {
@@ -149,6 +166,7 @@
 		F740CCEF22B9D61F00F92DAA /* TempComponents */ = {
 			isa = PBXGroup;
 			children = (
+				F70277EA23B5EC7000598E5D /* CalayerAbout */,
 				F70277E623B5E57600598E5D /* EagleEye */,
 				F740CCF022B9D63B00F92DAA /* DelayImage */,
 			);
@@ -297,7 +315,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F70282A32266D753006A8043 /* ViewController.m in Sources */,
+				F70277E923B5E9D300598E5D /* UIView+trickPoint.m in Sources */,
 				F740CCF622B9D8E100F92DAA /* SNDelayImage.m in Sources */,
+				F70277ED23B5EDED00598E5D /* LearnCalayer.m in Sources */,
 				F70282AE2266D754006A8043 /* main.m in Sources */,
 				F740CCF322B9D69100F92DAA /* SNDelayImageDto.m in Sources */,
 				F70282A02266D753006A8043 /* AppDelegate.m in Sources */,
