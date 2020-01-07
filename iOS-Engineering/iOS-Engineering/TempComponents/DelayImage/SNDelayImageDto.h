@@ -18,7 +18,11 @@ typedef NS_ENUM(NSInteger, SNDelayImageType) {
     SNDelayImageTypeImagUrled       = 1
 };
 
-
+//给UIButton设置图片的填充模式
+typedef NS_ENUM(NSInteger, SNDelayImageButtonImageMode) {
+    SNDelayImageModeSetImage           = 0,   // setImage
+    SNDelayImageModeSetBackgroundImage = 1    // setBackgroundImage
+};
 
 @interface SNDelayImageDto : NSObject
 @property(nonatomic, assign) SNDelayImageType imgType;
@@ -40,6 +44,12 @@ typedef NS_ENUM(NSInteger, SNDelayImageType) {
 
 //所属array，用作判断状态
 @property(nonatomic, weak) NSMutableArray *ownerArray;
+
+//给UIButton设置图片的填充模式
+@property(nonatomic, assign) SNDelayImageButtonImageMode buttonImageMode;
+
+//给UIButton设置图片的状态
+@property(nonatomic, assign) UIControlState buttonControlState;
 
 //获取image
 - (UIImage *)imageNamed:(NSString *)name;

@@ -92,11 +92,18 @@
     return self;
 }
 
-
+#pragma mark -------------------------- 使用入口
+// 入口一
 + (void)showWithDTO:(SNDelayImageDto *)dto {
     dto.imgType = SNDelayImageTypeImageNamed;
     [[SNDelayImage sharedInstance] imageNamed_addDTO:dto];
 }
+
+// 入口二
++ (void)imageNamed:(NSString *)name showInView:(id)imgView {
+//    [[SNDelayImage sharedInstance] startLoadImageWithName:name view:imgView controlState:UIControlStateNormal buttonImageMode:SNDelayImageModeSetImage];
+}
+
 
 - (void)imageNamed_addDTO:(SNDelayImageDto *)dto {
     

@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)showWithDTO:(SNDelayImageDto *)dto;
 
-//+ (void)imageNamed:(NSString *)name showInView:(UIImageView *)imgView;
++ (void)imageNamed:(NSString *)name showInView:(UIImageView *)imgView;
 
 @end
 

@@ -36,7 +36,7 @@ static char isCoverd;
     }
     
     // 更新蒙层的数据
-    [self someKindOfDataMeth];
+    [self someKindOfDataMethod];
 }
 
 - (void)creatNumberLayer {
@@ -47,9 +47,11 @@ static char isCoverd;
     borderLayer.borderColor = [UIColor blackColor].CGColor;
     borderLayer.frame = self.bounds;
     
+    // addSomeOtherView
+    
 }
 
-- (void)someKindOfDataMeth{
+- (void)someKindOfDataMethod{
     // viewWithTag 可获得想要更新的View
     // changeValue
 }
