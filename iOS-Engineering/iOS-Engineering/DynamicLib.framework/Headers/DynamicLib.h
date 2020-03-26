@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <DynamicLib/DynamicObject.h>
 
 //! Project version number for DynamicLib.
 FOUNDATION_EXPORT double DynamicLibVersionNumber;

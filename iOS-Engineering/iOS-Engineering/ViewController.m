@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "StaticFramework.framework/StaticObjc.h"
 #import <DynamicLib/DynamicObject.h>
-
 @interface ViewController ()
 
 @end
