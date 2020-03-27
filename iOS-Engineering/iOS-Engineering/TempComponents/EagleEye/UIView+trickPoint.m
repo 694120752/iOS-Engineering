@@ -2,8 +2,8 @@
 //  UIView+trickPoint.m
 //  zzz
 //
-//  Created by sn_zjs on 2019/12/26.
-//  Copyright © 2019 sn_zjs. All rights reserved.
+//  Created by zjs on 2019/12/26.
+//  Copyright © 2019 zjs. All rights reserved.
 //
 
 #import "UIView+trickPoint.h"

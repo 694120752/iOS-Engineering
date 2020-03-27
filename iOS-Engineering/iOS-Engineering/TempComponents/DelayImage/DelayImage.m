@@ -1,20 +1,20 @@
 //
-//  SNDelayImage.m
+//  DelayImage.m
 //  iOS-Engineering
 //
-//  Created by sn_zjs on 2019/6/19.
-//  Copyright © 2019 sn_zjs. All rights reserved.
+//  Created by zjs on 2019/6/19.
+//  Copyright © 2019 zjs. All rights reserved.
 //
 
-#import "SNDelayImage.h"
+#import "DelayImage.h"
 
-#define SNDelayImageHash(object) [NSString stringWithFormat:@"%lu", (unsigned long)[object hash]]
+#define DelayImageHash(object) [NSString stringWithFormat:@"%lu", (unsigned long)[object hash]]
 //字符串是否为空
 #define IsStrEmpty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref)isEqualToString:@""]))
 //数组是否为空
 #define IsArrEmpty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref) count] == 0))
 
-@interface SNDelayImage ()
+@interface DelayImage ()
 @property(nonatomic, assign) BOOL isActive;
 
 @property(nonatomic, strong) NSMutableDictionary *allImgDict;
@@ -67,13 +67,13 @@
     return nil;
 }
 @end
-@implementation SNDelayImage
+@implementation DelayImage
 
-+ (SNDelayImage *)sharedInstance{
-    static SNDelayImage *delay = nil;
++ (DelayImage *)sharedInstance{
+    static DelayImage *delay = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        delay = [[SNDelayImage alloc]init];
+        delay = [[DelayImage alloc]init];
     });
     return delay;
 }
@@ -84,28 +84,28 @@
         _allImgDict = [NSMutableDictionary dictionary];
         _imageNamedArray = [NSMutableArray array];
         _imageNamedLoadArray = [NSMutableArray array];
-        _imageNamedLoadQueue = dispatch_queue_create([[NSString stringWithFormat:@"SNDelayImage.imageNamedLoad.%@", self] UTF8String], NULL);
+        _imageNamedLoadQueue = dispatch_queue_create([[NSString stringWithFormat:@"DelayImage.imageNamedLoad.%@", self] UTF8String], NULL);
         _displayArray = [NSMutableArray array];
         
-        SNDelayImageRunloopObserverSetup();
+        DelayImageRunloopObserverSetup();
     }
     return self;
 }
 
 #pragma mark -------------------------- 使用入口
 // 入口一
-+ (void)showWithDTO:(SNDelayImageDto *)dto {
-    dto.imgType = SNDelayImageTypeImageNamed;
-    [[SNDelayImage sharedInstance] imageNamed_addDTO:dto];
++ (void)showWithDTO:(DelayImageDto *)dto {
+    dto.imgType = DelayImageTypeImageNamed;
+    [[DelayImage sharedInstance] imageNamed_addDTO:dto];
 }
 
 // 入口二
 + (void)imageNamed:(NSString *)name showInView:(id)imgView {
-//    [[SNDelayImage sharedInstance] startLoadImageWithName:name view:imgView controlState:UIControlStateNormal buttonImageMode:SNDelayImageModeSetImage];
+//    [[DelayImage sharedInstance] startLoadImageWithName:name view:imgView controlState:UIControlStateNormal buttonImageMode:DelayImageModeSetImage];
 }
 
 
-- (void)imageNamed_addDTO:(SNDelayImageDto *)dto {
+- (void)imageNamed_addDTO:(DelayImageDto *)dto {
     
     if (!dto) {
         return;
@@ -127,8 +127,8 @@
     }
     
     // 当前imgView之前如果有加载图片，则将之前dto的imgObject置nil,后面不加载
-    dto.hashKey = SNDelayImageHash(dto.imgObject);
-    SNDelayImageDto *oldDTO = [_allImgDict valueForKey:dto.hashKey];
+    dto.hashKey = DelayImageHash(dto.imgObject);
+    DelayImageDto *oldDTO = [_allImgDict valueForKey:dto.hashKey];
     if (oldDTO) {
         oldDTO.imgObject = nil;
     }
@@ -167,7 +167,7 @@
     }
     
     // 加载图片
-    SNDelayImageDto *dto = [_imageNamedArray safeObjectAtIndex:0];
+    DelayImageDto *dto = [_imageNamedArray safeObjectAtIndex:0];
     // 从待加载array中移除
     [_imageNamedArray removeObject:dto];
     
@@ -188,7 +188,7 @@
     });
 }
 
-- (void)imageNamed_finishLoad:(SNDelayImageDto *)dto {
+- (void)imageNamed_finishLoad:(DelayImageDto *)dto {
     if (![[NSThread currentThread] isMainThread]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self imageNamed_finishLoad:dto];
@@ -207,7 +207,7 @@
 }
 
 #pragma mark display
-- (void)display_addDTO:(SNDelayImageDto *)dto {
+- (void)display_addDTO:(DelayImageDto *)dto {
     if (![[NSThread currentThread] isMainThread]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self display_addDTO:dto];
@@ -232,7 +232,7 @@
         return;
     }
     
-    for (SNDelayImageDto *dto in _displayArray) {
+    for (DelayImageDto *dto in _displayArray) {
         if (dto.imgObject) {
             if (dto.displalyBlock) {
                 dto.displalyBlock(dto);
@@ -252,7 +252,7 @@
 
 
 #pragma mark -------------------------- 观测
-static void SNDelayImageRunloopObserverSetup(){
+static void DelayImageRunloopObserverSetup(){
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -269,29 +269,29 @@ static void SNDelayImageRunloopObserverSetup(){
                                                         kCFRunLoopExit = (1UL << 7),// 退出
          true                                           观察者只监听一次还是每次Run Loop运行时都监听。
          0xFFFFFF                                       观察者优先级
-         SNDelayImageRunLoopObserverCallBack            回调
+         DelayImageRunLoopObserverCallBack            回调
          NULL                                           上下文
          */
         observer = CFRunLoopObserverCreate(CFAllocatorGetDefault(),
                                            kCFRunLoopBeforeWaiting | kCFRunLoopExit,
                                            true,
                                            0xFFFFFF,
-                                           SNDelayImageRunLoopObserverCallBack,
+                                           DelayImageRunLoopObserverCallBack,
                                            NULL);
         CFRunLoopAddObserver(runloop, observer, kCFRunLoopCommonModes);
         CFRelease(observer);
     });
 }
 
-static void SNDelayImageRunLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
+static void DelayImageRunLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
     static BOOL firstCallBack = YES;
     if (firstCallBack) {
         firstCallBack = NO;
-        [SNDelayImage sharedInstance].isActive = YES;
-        [[SNDelayImage sharedInstance] imageNamed_startLoad];
+        [DelayImage sharedInstance].isActive = YES;
+        [[DelayImage sharedInstance] imageNamed_startLoad];
     }
     
-    [[SNDelayImage sharedInstance] startDisplay];
+    [[DelayImage sharedInstance] startDisplay];
 }
 
 @end

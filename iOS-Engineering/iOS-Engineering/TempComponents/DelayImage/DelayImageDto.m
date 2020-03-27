@@ -1,14 +1,14 @@
 //
-//  SNDelayImageDto.m
+//  DelayImageDto.m
 //  iOS-Engineering
 //
-//  Created by sn_zjs on 2019/6/19.
-//  Copyright © 2019 sn_zjs. All rights reserved.
+//  Created by zjs on 2019/6/19.
+//  Copyright © 2019 zjs. All rights reserved.
 //
 
-#import "SNDelayImageDto.h"
+#import "DelayImageDto.h"
 
-@implementation SNDelayImageDto
+@implementation DelayImageDto
 - (void)dealloc {
     //    NSLog(@"dealloc", nil);
 }

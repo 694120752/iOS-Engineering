@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  iOS-Engineering
 //
-//  Created by sn_zjs on 2019/4/17.
-//  Copyright © 2019 sn_zjs. All rights reserved.
+//  Created by zjs on 2019/4/17.
+//  Copyright © 2019 zjs. All rights reserved.
 //
 
 #import "AppDelegate.h"

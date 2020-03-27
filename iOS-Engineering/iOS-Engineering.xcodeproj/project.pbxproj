@@ -17,8 +17,8 @@
 		F70282AE2266D754006A8043 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F70282AD2266D754006A8043 /* main.m */; };
 		F70282B82266D754006A8043 /* iOS_EngineeringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F70282B72266D754006A8043 /* iOS_EngineeringTests.m */; };
 		F70282C32266D754006A8043 /* iOS_EngineeringUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F70282C22266D754006A8043 /* iOS_EngineeringUITests.m */; };
-		F740CCF322B9D69100F92DAA /* SNDelayImageDto.m in Sources */ = {isa = PBXBuildFile; fileRef = F740CCF222B9D69100F92DAA /* SNDelayImageDto.m */; };
-		F740CCF622B9D8E100F92DAA /* SNDelayImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F740CCF522B9D8E100F92DAA /* SNDelayImage.m */; };
+		F740CCF322B9D69100F92DAA /* DelayImageDto.m in Sources */ = {isa = PBXBuildFile; fileRef = F740CCF222B9D69100F92DAA /* DelayImageDto.m */; };
+		F740CCF622B9D8E100F92DAA /* DelayImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F740CCF522B9D8E100F92DAA /* DelayImage.m */; };
 		F7DF48EA23C5B88700008210 /* StaticFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7DF48E923C5B88700008210 /* StaticFramework.framework */; };
 		F7DF48F523C5BF3E00008210 /* DynamicLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7DF48F423C5BF3E00008210 /* DynamicLib.framework */; };
 /* End PBXBuildFile section */
@@ -74,10 +74,10 @@
 		F70282BE2266D754006A8043 /* iOS-EngineeringUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-EngineeringUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70282C22266D754006A8043 /* iOS_EngineeringUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_EngineeringUITests.m; sourceTree = "<group>"; };
 		F70282C42266D754006A8043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F740CCF122B9D69100F92DAA /* SNDelayImageDto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNDelayImageDto.h; sourceTree = "<group>"; };
-		F740CCF222B9D69100F92DAA /* SNDelayImageDto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNDelayImageDto.m; sourceTree = "<group>"; };
-		F740CCF422B9D8E100F92DAA /* SNDelayImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNDelayImage.h; sourceTree = "<group>"; };
-		F740CCF522B9D8E100F92DAA /* SNDelayImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNDelayImage.m; sourceTree = "<group>"; };
+		F740CCF122B9D69100F92DAA /* DelayImageDto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DelayImageDto.h; sourceTree = "<group>"; };
+		F740CCF222B9D69100F92DAA /* DelayImageDto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelayImageDto.m; sourceTree = "<group>"; };
+		F740CCF422B9D8E100F92DAA /* DelayImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DelayImage.h; sourceTree = "<group>"; };
+		F740CCF522B9D8E100F92DAA /* DelayImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelayImage.m; sourceTree = "<group>"; };
 		F7DF48E923C5B88700008210 /* StaticFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StaticFramework.framework; sourceTree = "<group>"; };
 		F7DF48F423C5BF3E00008210 /* DynamicLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DynamicLib.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,10 +197,10 @@
 		F740CCF022B9D63B00F92DAA /* DelayImage */ = {
 			isa = PBXGroup;
 			children = (
-				F740CCF122B9D69100F92DAA /* SNDelayImageDto.h */,
-				F740CCF222B9D69100F92DAA /* SNDelayImageDto.m */,
-				F740CCF422B9D8E100F92DAA /* SNDelayImage.h */,
-				F740CCF522B9D8E100F92DAA /* SNDelayImage.m */,
+				F740CCF122B9D69100F92DAA /* DelayImageDto.h */,
+				F740CCF222B9D69100F92DAA /* DelayImageDto.m */,
+				F740CCF422B9D8E100F92DAA /* DelayImage.h */,
+				F740CCF522B9D8E100F92DAA /* DelayImage.m */,
 			);
 			path = DelayImage;
 			sourceTree = "<group>";
@@ -338,10 +338,10 @@
 			files = (
 				F70282A32266D753006A8043 /* ViewController.m in Sources */,
 				F70277E923B5E9D300598E5D /* UIView+trickPoint.m in Sources */,
-				F740CCF622B9D8E100F92DAA /* SNDelayImage.m in Sources */,
+				F740CCF622B9D8E100F92DAA /* DelayImage.m in Sources */,
 				F70277ED23B5EDED00598E5D /* LearnCalayer.m in Sources */,
 				F70282AE2266D754006A8043 /* main.m in Sources */,
-				F740CCF322B9D69100F92DAA /* SNDelayImageDto.m in Sources */,
+				F740CCF322B9D69100F92DAA /* DelayImageDto.m in Sources */,
 				F70282A02266D753006A8043 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
