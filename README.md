@@ -60,7 +60,7 @@ target 'MainProject' do
 end
 
 ```
-> 对上面解释一下 首先 指定一个xcworkspace 然后将需要添加动态库写进去（target TTF ） 使用project指令自动生成子工程 ；
+> 对上面解释一下 首先 指定一个xcworkspace 然后将需要添加动态库写进去（target TTF ） target的名字为xcodeproj的文件名 使用project指令自动生成子工程 ；
 这样写的话 pod的库子工程和主工程都能用 。
 一般独立的业务动态库都会使用类似afn等工具所以 通过pod添加能自动添加对应的依赖。
 

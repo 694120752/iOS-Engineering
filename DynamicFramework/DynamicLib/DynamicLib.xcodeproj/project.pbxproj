@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E71D4D01048BEA74EB082AD /* libPods-iOS-Engineering-DynamicLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72EC3361E6D552E42AE25C30 /* libPods-iOS-Engineering-DynamicLib.a */; };
 		F7DF48C123C5B38600008210 /* DynamicLib.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DF48BF23C5B38500008210 /* DynamicLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7DF48C923C5B3CA00008210 /* DynamicObject.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DF48C723C5B3CA00008210 /* DynamicObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7DF48CA23C5B3CA00008210 /* DynamicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DF48C823C5B3CA00008210 /* DynamicObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CFE09FE7DC08A68B8C3E1FF /* Pods-iOS-Engineering-DynamicLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Engineering-DynamicLib.debug.xcconfig"; path = "../../iOS-Engineering/Pods/Target Support Files/Pods-iOS-Engineering-DynamicLib/Pods-iOS-Engineering-DynamicLib.debug.xcconfig"; sourceTree = "<group>"; };
+		4580CE8A8DBB6060833B3C73 /* Pods-iOS-Engineering-DynamicLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Engineering-DynamicLib.release.xcconfig"; path = "../../iOS-Engineering/Pods/Target Support Files/Pods-iOS-Engineering-DynamicLib/Pods-iOS-Engineering-DynamicLib.release.xcconfig"; sourceTree = "<group>"; };
+		72EC3361E6D552E42AE25C30 /* libPods-iOS-Engineering-DynamicLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Engineering-DynamicLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DF48BC23C5B38500008210 /* DynamicLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DynamicLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DF48BF23C5B38500008210 /* DynamicLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicLib.h; sourceTree = "<group>"; };
 		F7DF48C023C5B38600008210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -25,17 +29,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E71D4D01048BEA74EB082AD /* libPods-iOS-Engineering-DynamicLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67CDBBA5C7E74A14FB3CC996 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72EC3361E6D552E42AE25C30 /* libPods-iOS-Engineering-DynamicLib.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F7DF48B223C5B38500008210 = {
 			isa = PBXGroup;
 			children = (
 				F7DF48BE23C5B38500008210 /* DynamicLib */,
 				F7DF48BD23C5B38500008210 /* Products */,
+				F7EF2473F5993069ED2D905D /* Pods */,
+				67CDBBA5C7E74A14FB3CC996 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +73,15 @@
 			path = DynamicLib;
 			sourceTree = "<group>";
 		};
+		F7EF2473F5993069ED2D905D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CFE09FE7DC08A68B8C3E1FF /* Pods-iOS-Engineering-DynamicLib.debug.xcconfig */,
+				4580CE8A8DBB6060833B3C73 /* Pods-iOS-Engineering-DynamicLib.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -77,10 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7DF48C423C5B38600008210 /* Build configuration list for PBXNativeTarget "DynamicLib" */;
 			buildPhases = (
+				7A5787797E21421560678514 /* [CP] Check Pods Manifest.lock */,
 				F7DF48B723C5B38500008210 /* Headers */,
 				F7DF48B823C5B38500008210 /* Sources */,
 				F7DF48B923C5B38500008210 /* Frameworks */,
 				F7DF48BA23C5B38500008210 /* Resources */,
+				5775178010B6E27286657406 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5775178010B6E27286657406 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../iOS-Engineering/Pods/Target Support Files/Pods-iOS-Engineering-DynamicLib/Pods-iOS-Engineering-DynamicLib-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A5787797E21421560678514 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F7DF48B823C5B38500008210 /* Sources */ = {
@@ -263,6 +322,7 @@
 		};
 		F7DF48C523C5B38600008210 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CFE09FE7DC08A68B8C3E1FF /* Pods-iOS-Engineering-DynamicLib.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -286,6 +346,7 @@
 		};
 		F7DF48C623C5B38600008210 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4580CE8A8DBB6060833B3C73 /* Pods-iOS-Engineering-DynamicLib.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

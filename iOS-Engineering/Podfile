@@ -1,11 +1,17 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
-
+platform :ios, '9.0'
+workspace 'iOS-Engineering.xcworkspace'
 target 'iOS-Engineering' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
 
-  # Pods for iOS-Engineering
+    
+    pod 'AFNetworking', :path => '~/.cocoapods/repos/SNEBuy_repos/AFNetworking/2.5.5'
+    pod "CTMediator"
+    
+    
+    
+    target 'DynamicLib' do
+       project '../DynamicFramework/DynamicLib/DynamicLib.xcodeproj'
+    end
 
   target 'iOS-EngineeringTests' do
     inherit! :search_paths
