@@ -22,8 +22,6 @@
 		F70282C32266D754006A8043 /* iOS_EngineeringUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F70282C22266D754006A8043 /* iOS_EngineeringUITests.m */; };
 		F740CCF322B9D69100F92DAA /* DelayImageDto.m in Sources */ = {isa = PBXBuildFile; fileRef = F740CCF222B9D69100F92DAA /* DelayImageDto.m */; };
 		F740CCF622B9D8E100F92DAA /* DelayImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F740CCF522B9D8E100F92DAA /* DelayImage.m */; };
-		F7DF48EA23C5B88700008210 /* StaticFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7DF48E923C5B88700008210 /* StaticFramework.framework */; };
-		F7DF48F523C5BF3E00008210 /* DynamicLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7DF48F423C5BF3E00008210 /* DynamicLib.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,8 +88,6 @@
 		F740CCF222B9D69100F92DAA /* DelayImageDto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelayImageDto.m; sourceTree = "<group>"; };
 		F740CCF422B9D8E100F92DAA /* DelayImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DelayImage.h; sourceTree = "<group>"; };
 		F740CCF522B9D8E100F92DAA /* DelayImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelayImage.m; sourceTree = "<group>"; };
-		F7DF48E923C5B88700008210 /* StaticFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StaticFramework.framework; sourceTree = "<group>"; };
-		F7DF48F423C5BF3E00008210 /* DynamicLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DynamicLib.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7DF48F523C5BF3E00008210 /* DynamicLib.framework in Frameworks */,
-				F7DF48EA23C5B88700008210 /* StaticFramework.framework in Frameworks */,
 				82A192AA1684F61FCF432E71 /* libPods-iOS-Engineering.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,8 +184,6 @@
 		F702829D2266D753006A8043 /* iOS-Engineering */ = {
 			isa = PBXGroup;
 			children = (
-				F7DF48F423C5BF3E00008210 /* DynamicLib.framework */,
-				F7DF48E923C5B88700008210 /* StaticFramework.framework */,
 				F740CCEF22B9D61F00F92DAA /* TempComponents */,
 				F702829E2266D753006A8043 /* AppDelegate.h */,
 				F702829F2266D753006A8043 /* AppDelegate.m */,
