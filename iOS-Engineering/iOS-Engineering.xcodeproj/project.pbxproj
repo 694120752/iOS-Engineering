@@ -22,6 +22,13 @@
 		F70282C32266D754006A8043 /* iOS_EngineeringUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F70282C22266D754006A8043 /* iOS_EngineeringUITests.m */; };
 		F740CCF322B9D69100F92DAA /* DelayImageDto.m in Sources */ = {isa = PBXBuildFile; fileRef = F740CCF222B9D69100F92DAA /* DelayImageDto.m */; };
 		F740CCF622B9D8E100F92DAA /* DelayImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F740CCF522B9D8E100F92DAA /* DelayImage.m */; };
+		F7BE201F24346E330054C56D /* DynamicLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7BE201E24346E330054C56D /* DynamicLib.framework */; };
+		F7BE202024346E330054C56D /* DynamicLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F7BE201E24346E330054C56D /* DynamicLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F7BE202224346E390054C56D /* StaticFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7BE202124346E390054C56D /* StaticFramework.framework */; };
+		F7BE202324346E390054C56D /* StaticFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F7BE202124346E390054C56D /* StaticFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F7BE20262434760C0054C56D /* HitView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BE20252434760C0054C56D /* HitView.m */; };
+		F7BE20292434873C0054C56D /* MyApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BE20282434873C0054C56D /* MyApplication.m */; };
+		F7C8A2EB2435D06900DC9EC8 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8A2EA2435D06900DC9EC8 /* EmptyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F7BE202024346E330054C56D /* DynamicLib.framework in Embed Frameworks */,
+				F7BE202324346E390054C56D /* StaticFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +97,14 @@
 		F740CCF222B9D69100F92DAA /* DelayImageDto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelayImageDto.m; sourceTree = "<group>"; };
 		F740CCF422B9D8E100F92DAA /* DelayImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DelayImage.h; sourceTree = "<group>"; };
 		F740CCF522B9D8E100F92DAA /* DelayImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelayImage.m; sourceTree = "<group>"; };
+		F7BE201E24346E330054C56D /* DynamicLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DynamicLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7BE202124346E390054C56D /* StaticFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StaticFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7BE20242434760C0054C56D /* HitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitView.h; sourceTree = "<group>"; };
+		F7BE20252434760C0054C56D /* HitView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitView.m; sourceTree = "<group>"; };
+		F7BE20272434873C0054C56D /* MyApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyApplication.h; sourceTree = "<group>"; };
+		F7BE20282434873C0054C56D /* MyApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyApplication.m; sourceTree = "<group>"; };
+		F7C8A2E92435D06900DC9EC8 /* EmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
+		F7C8A2EA2435D06900DC9EC8 /* EmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7BE201F24346E330054C56D /* DynamicLib.framework in Frameworks */,
+				F7BE202224346E390054C56D /* StaticFramework.framework in Frameworks */,
 				82A192AA1684F61FCF432E71 /* libPods-iOS-Engineering.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +153,8 @@
 		D1B9ED78E3A2BDD4FB26A027 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7BE202124346E390054C56D /* StaticFramework.framework */,
+				F7BE201E24346E330054C56D /* DynamicLib.framework */,
 				06623B1128429DBE5471113A /* libPods-iOS-Engineering.a */,
 				752E03236ED414BB026F546F /* libPods-iOS-EngineeringTests.a */,
 				A0CF33CCE809D6A9D91531A9 /* libPods-iOS-EngineeringUITests.a */,
@@ -187,8 +208,14 @@
 				F740CCEF22B9D61F00F92DAA /* TempComponents */,
 				F702829E2266D753006A8043 /* AppDelegate.h */,
 				F702829F2266D753006A8043 /* AppDelegate.m */,
+				F7BE20272434873C0054C56D /* MyApplication.h */,
+				F7BE20282434873C0054C56D /* MyApplication.m */,
 				F70282A12266D753006A8043 /* ViewController.h */,
 				F70282A22266D753006A8043 /* ViewController.m */,
+				F7BE20242434760C0054C56D /* HitView.h */,
+				F7BE20252434760C0054C56D /* HitView.m */,
+				F7C8A2E92435D06900DC9EC8 /* EmptyView.h */,
+				F7C8A2EA2435D06900DC9EC8 /* EmptyView.m */,
 				F70282A42266D753006A8043 /* Main.storyboard */,
 				F70282A72266D754006A8043 /* Assets.xcassets */,
 				F70282A92266D754006A8043 /* LaunchScreen.storyboard */,
@@ -519,7 +546,10 @@
 				F70277E923B5E9D300598E5D /* UIView+trickPoint.m in Sources */,
 				F740CCF622B9D8E100F92DAA /* DelayImage.m in Sources */,
 				F70277ED23B5EDED00598E5D /* LearnCalayer.m in Sources */,
+				F7C8A2EB2435D06900DC9EC8 /* EmptyView.m in Sources */,
+				F7BE20262434760C0054C56D /* HitView.m in Sources */,
 				F70282AE2266D754006A8043 /* main.m in Sources */,
+				F7BE20292434873C0054C56D /* MyApplication.m in Sources */,
 				F740CCF322B9D69100F92DAA /* DelayImageDto.m in Sources */,
 				F70282A02266D753006A8043 /* AppDelegate.m in Sources */,
 			);

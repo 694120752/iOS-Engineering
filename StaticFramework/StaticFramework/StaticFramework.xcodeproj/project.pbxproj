@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CC2C4D2A8F2497A09057C5C /* libPods-iOS-Engineering-StaticFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCD4FA0F4C1B8683534D9DB /* libPods-iOS-Engineering-StaticFramework.a */; };
 		F7DF48DA23C5B40A00008210 /* StaticFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DF48D823C5B40A00008210 /* StaticFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7DF48E223C5B43600008210 /* StaticObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DF48E023C5B43600008210 /* StaticObjc.h */; };
 		F7DF48E323C5B43600008210 /* StaticObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DF48E123C5B43600008210 /* StaticObjc.m */; };
@@ -14,11 +15,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E254E4C1BA83BF447A66921 /* Pods-iOS-Engineering-StaticFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Engineering-StaticFramework.debug.xcconfig"; path = "../../iOS-Engineering/Pods/Target Support Files/Pods-iOS-Engineering-StaticFramework/Pods-iOS-Engineering-StaticFramework.debug.xcconfig"; sourceTree = "<group>"; };
+		ECCD4FA0F4C1B8683534D9DB /* libPods-iOS-Engineering-StaticFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Engineering-StaticFramework.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DF48D523C5B40A00008210 /* StaticFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StaticFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DF48D823C5B40A00008210 /* StaticFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticFramework.h; sourceTree = "<group>"; };
 		F7DF48D923C5B40A00008210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7DF48E023C5B43600008210 /* StaticObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticObjc.h; sourceTree = "<group>"; };
 		F7DF48E123C5B43600008210 /* StaticObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticObjc.m; sourceTree = "<group>"; };
+		FF32C0C31CA596CFD7021DED /* Pods-iOS-Engineering-StaticFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Engineering-StaticFramework.release.xcconfig"; path = "../../iOS-Engineering/Pods/Target Support Files/Pods-iOS-Engineering-StaticFramework/Pods-iOS-Engineering-StaticFramework.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +30,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC2C4D2A8F2497A09057C5C /* libPods-iOS-Engineering-StaticFramework.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		943C9F6B42587B409D222115 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECCD4FA0F4C1B8683534D9DB /* libPods-iOS-Engineering-StaticFramework.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F7DF48CB23C5B40A00008210 = {
 			isa = PBXGroup;
 			children = (
 				F7DF48D723C5B40A00008210 /* StaticFramework */,
 				F7DF48D623C5B40A00008210 /* Products */,
+				FDC770AA957E70A28BF8DBB0 /* Pods */,
+				943C9F6B42587B409D222115 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +74,15 @@
 			path = StaticFramework;
 			sourceTree = "<group>";
 		};
+		FDC770AA957E70A28BF8DBB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E254E4C1BA83BF447A66921 /* Pods-iOS-Engineering-StaticFramework.debug.xcconfig */,
+				FF32C0C31CA596CFD7021DED /* Pods-iOS-Engineering-StaticFramework.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -78,10 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7DF48DD23C5B40A00008210 /* Build configuration list for PBXNativeTarget "StaticFramework" */;
 			buildPhases = (
+				FADB6F9BECB8F2CB07BA9FE2 /* [CP] Check Pods Manifest.lock */,
 				F7DF48D023C5B40A00008210 /* Headers */,
 				F7DF48D123C5B40A00008210 /* Sources */,
 				F7DF48D223C5B40A00008210 /* Frameworks */,
 				F7DF48D323C5B40A00008210 /* Resources */,
+				6C2C0B7F4F364A78BB06FFFA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,6 +160,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C2C0B7F4F364A78BB06FFFA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../iOS-Engineering/Pods/Target Support Files/Pods-iOS-Engineering-StaticFramework/Pods-iOS-Engineering-StaticFramework-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FADB6F9BECB8F2CB07BA9FE2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F7DF48D123C5B40A00008210 /* Sources */ = {
@@ -265,6 +324,7 @@
 		};
 		F7DF48DE23C5B40A00008210 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E254E4C1BA83BF447A66921 /* Pods-iOS-Engineering-StaticFramework.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -289,6 +349,7 @@
 		};
 		F7DF48DF23C5B40A00008210 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF32C0C31CA596CFD7021DED /* Pods-iOS-Engineering-StaticFramework.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

@@ -10,4 +10,7 @@
    <FileRef
       location = "group:../DynamicFramework/DynamicLib/DynamicLib.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:../StaticFramework/StaticFramework/StaticFramework.xcodeproj">
+   </FileRef>
 </Workspace>

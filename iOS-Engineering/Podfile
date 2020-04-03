@@ -12,6 +12,10 @@ target 'iOS-Engineering' do
     target 'DynamicLib' do
        project '../DynamicFramework/DynamicLib/DynamicLib.xcodeproj'
     end
+    
+    target 'StaticFramework' do
+        project '../StaticFramework/StaticFramework/StaticFramework.xcodeproj'
+    end
 
   target 'iOS-EngineeringTests' do
     inherit! :search_paths
