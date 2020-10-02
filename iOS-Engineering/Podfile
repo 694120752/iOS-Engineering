@@ -4,8 +4,9 @@ workspace 'iOS-Engineering.xcworkspace'
 target 'iOS-Engineering' do
 
     
-    pod 'AFNetworking', :path => '~/.cocoapods/repos/SNEBuy_repos/AFNetworking/2.5.5'
+#    pod 'AFNetworking', :path => '~/.cocoapods/repos/SNEBuy_repos/AFNetworking/2.5.5'
     pod "CTMediator"
+    
     
     
     

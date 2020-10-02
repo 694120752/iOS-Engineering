@@ -13,7 +13,7 @@
    
 
 ## PT && PX
-1. 1pt其实是包含了很多px的  像素越多越清晰 包含的信息越多 是很多pt表示1px
+1. 1pt其实是包含了很多px的  像素越多越清晰 包含的信息越多 是很多px表示1pt
 
 2. 所以同样的10px 在越高的分辨率上 物理长度越短
 
@@ -65,9 +65,10 @@ end
 一般独立的业务动态库都会使用类似afn等工具所以 通过pod添加能自动添加对应的依赖。
 
 
-3. 动态库懒加载
-   3.1去除主工程对需要懒加载库的依赖 TARGETS --> General --> Frameworks,Libraries,andEmbedded Content --> 删除对应的依赖
+3. 动态库懒加载</br>
+   3.1去除主工程对需要懒加载库的依赖 TARGETS --> General --> Frameworks,Libraries,andEmbedded Content --> 删除对应的依赖</br>
    3.2在需要使用的地方调用dlopen 打开指定的动态库（需要#import <dlfcn.h>）
+   </br>
    3.3以这个TTF为例：
 
    ```objective-c

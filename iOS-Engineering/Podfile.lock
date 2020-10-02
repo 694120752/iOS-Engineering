@@ -1,39 +1,16 @@
 PODS:
-  - AFNetworking (2.5.5):
-    - AFNetworking/NSURLConnection (= 2.5.5)
-    - AFNetworking/NSURLSession (= 2.5.5)
-    - AFNetworking/Reachability (= 2.5.5)
-    - AFNetworking/Security (= 2.5.5)
-    - AFNetworking/Serialization (= 2.5.5)
-    - AFNetworking/UIKit (= 2.5.5)
-  - AFNetworking/NSURLConnection (2.5.5):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.5):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.5)
-  - AFNetworking/Security (2.5.5)
-  - AFNetworking/Serialization (2.5.5)
-  - AFNetworking/UIKit (2.5.5):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
   - CTMediator (18)
 
 DEPENDENCIES:
-  - AFNetworking (from `~/.cocoapods/repos/SNEBuy_repos/AFNetworking/2.5.5`)
   - CTMediator
 
-EXTERNAL SOURCES:
-  AFNetworking:
-    :path: "~/.cocoapods/repos/SNEBuy_repos/AFNetworking/2.5.5"
+SPEC REPOS:
+  trunk:
+    - CTMediator
 
 SPEC CHECKSUMS:
-  AFNetworking: dc7a4d3a0428e6e53d21eda2b4212054c95ff429
   CTMediator: 420e9d90f9f1fd740caf2238ed7ed64dc621c5b7
 
-PODFILE CHECKSUM: 9b23e6b8cf69634f1d059fdaf05a7ef9014ad6e0
+PODFILE CHECKSUM: 6b2287c7d66408d7ff29ab01e846809f91293473
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.9.1
