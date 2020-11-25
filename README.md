@@ -106,3 +106,14 @@ end
 1.      启动图不更新是因为在app本地会根据当前版本的launchscreen展示出的内容生成一张启动图的图片缓存在Documents/Library/SplashBoard，系统也会给这个图片缓存做一个相应的内存缓存。双缓存机制，图片缓存在storyboard里的图片名称都变化时会重新生成，内存缓存在被清除内存时会被清除（如重启），如果图片缓存为空，系统会生成图片缓存并且生成相应的内存缓存。
 2.      在每次app启动完成后，要把本地的图片缓存删掉，并且app的新版本要把storyboard里边的图片名称都换掉。
 
+
+## 电量测试
+
+较准确的做法是导出手机的分析文件（和崩溃日志的在一个地方）
+文件名为  Sysdiagnose 不用安装证书了 需要同时按住音量加减和开机键
+
+
+1. select id from PLAccountingOperator_EventNone_Nodes where name='BundleID'
+2. select id,timestamp,timeInterval,BundleID,ScreenOnTime from PLAppTimeService_Aggregate_AppRunTime where BundleID=''
+3. select sum(Energy)/1000.000 from PLAccountingOperator_Aggregate_RootNodeEnergy where NodeId='' and timestap=
+计量单位为 mWh （毫瓦时）
