@@ -82,23 +82,23 @@ end
    
    ```
 > 注意：主工程去除了对动态库的依赖后 编译时不会带着动态库一起编译，即framework为上一次编译的结果 在子工程中修改了文件后需要重新 build一下。 建议开发时不要删除依赖 在打包时再删除。
-
    
+>如果本地pod中使用的category，需要使用 在podspec文件中添加 spec.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC -all_load -force_load' }
 
 ## 解耦
 1.     解耦的本质是在不引用某个类的情况下试用这个类 
 2.     目前常用的办法是三种 ##URL Router ##Target-Action ##Protocol - Class
 2.2    URL Router
        类在load方法时注册好block
-       
         利用UIApplication的方法 openUrl 来使用block
+        (通过URL绑定和Class的关系)
 
 2.3    Target-Action
         利用runtime 通过字符串找出 class 和对应的method   
-
+        
 2.4   Protocol - Class
-
-​		找出类 还是runtime的方法 不过对应的method 使用协议来实现不通过runtime去找方法。
+    (通过)Protocal绑定class
+​    找出类 还是runtime的方法 不过对应的method 使用协议来实现不通过runtime去找方法。
 
 
 

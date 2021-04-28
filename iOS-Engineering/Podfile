@@ -6,8 +6,8 @@ target 'iOS-Engineering' do
     
 #    pod 'AFNetworking', :path => '~/.cocoapods/repos/SNEBuy_repos/AFNetworking/2.5.5'
     pod "CTMediator"
-    
-    
+    pod "Objection"
+    pod "SDWebImage"
     
     
     target 'DynamicLib' do
@@ -18,6 +18,13 @@ target 'iOS-Engineering' do
         project '../StaticFramework/StaticFramework/StaticFramework.xcodeproj'
     end
 
+    # Common 作为一个独立的静态库被依赖
+    # 需要1.增加依赖(Frameworks,Libraries...中添加)
+    #    2.build phases 中暴露头文件
+    #    3.Common.h 引入要暴露的类
+    target 'Common' do
+      project 'Common/Common.xcodeproj'
+    end
   target 'iOS-EngineeringTests' do
     inherit! :search_paths
     # Pods for testing

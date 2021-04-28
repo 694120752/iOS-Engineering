@@ -1,16 +1,26 @@
 PODS:
   - CTMediator (18)
+  - Objection (1.6.1)
+  - SDWebImage (5.11.0):
+    - SDWebImage/Core (= 5.11.0)
+  - SDWebImage/Core (5.11.0)
 
 DEPENDENCIES:
   - CTMediator
+  - Objection
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
     - CTMediator
+    - Objection
+    - SDWebImage
 
 SPEC CHECKSUMS:
   CTMediator: 420e9d90f9f1fd740caf2238ed7ed64dc621c5b7
+  Objection: ed03f2219cb22d2b5b893114219fe6c7e3263bde
+  SDWebImage: 7acbb57630ac7db4a495547fb73916ff3e432f6b
 
-PODFILE CHECKSUM: 4f02343b9a89ccecbdc4615396a02022adc6b4ab
+PODFILE CHECKSUM: 97b5c33ad8cc849dc9e4c883b714e85960964935
 
 COCOAPODS: 1.9.1

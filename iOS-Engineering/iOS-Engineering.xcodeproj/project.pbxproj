@@ -10,6 +10,8 @@
 		5D35B9EFA3B3B4C2BD0165EB /* libPods-iOS-EngineeringTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 752E03236ED414BB026F546F /* libPods-iOS-EngineeringTests.a */; };
 		82A192AA1684F61FCF432E71 /* libPods-iOS-Engineering.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06623B1128429DBE5471113A /* libPods-iOS-Engineering.a */; };
 		C9F2680CF5DE2EDC82F70193 /* libPods-iOS-EngineeringUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CF33CCE809D6A9D91531A9 /* libPods-iOS-EngineeringUITests.a */; };
+		ED65426A2638623F0058D239 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED6542692638623F0058D239 /* Common.framework */; };
+		ED65426B2638623F0058D239 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED6542692638623F0058D239 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F70277E923B5E9D300598E5D /* UIView+trickPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F70277E723B5E9D300598E5D /* UIView+trickPoint.m */; };
 		F70277ED23B5EDED00598E5D /* LearnCalayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F70277EC23B5EDED00598E5D /* LearnCalayer.m */; };
 		F70282A02266D753006A8043 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F702829F2266D753006A8043 /* AppDelegate.m */; };
@@ -55,6 +57,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				ED65426B2638623F0058D239 /* Common.framework in Embed Frameworks */,
 				F7BE202024346E330054C56D /* DynamicLib.framework in Embed Frameworks */,
 				F7BE202324346E390054C56D /* StaticFramework.framework in Embed Frameworks */,
 			);
@@ -73,6 +76,7 @@
 		A0CF33CCE809D6A9D91531A9 /* libPods-iOS-EngineeringUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-EngineeringUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA81B18B678E074F92F091E3 /* Pods-iOS-Engineering.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Engineering.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-Engineering/Pods-iOS-Engineering.debug.xcconfig"; sourceTree = "<group>"; };
 		D4130A6D5B8092D874E44AA5 /* Pods-iOS-EngineeringUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-EngineeringUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-EngineeringUITests/Pods-iOS-EngineeringUITests.release.xcconfig"; sourceTree = "<group>"; };
+		ED6542692638623F0058D239 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70277E723B5E9D300598E5D /* UIView+trickPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+trickPoint.m"; sourceTree = "<group>"; };
 		F70277E823B5E9D300598E5D /* UIView+trickPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+trickPoint.h"; sourceTree = "<group>"; };
 		F70277EB23B5EDED00598E5D /* LearnCalayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LearnCalayer.h; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7BE201F24346E330054C56D /* DynamicLib.framework in Frameworks */,
+				ED65426A2638623F0058D239 /* Common.framework in Frameworks */,
 				F7BE202224346E390054C56D /* StaticFramework.framework in Frameworks */,
 				82A192AA1684F61FCF432E71 /* libPods-iOS-Engineering.a in Frameworks */,
 			);
@@ -153,6 +158,7 @@
 		D1B9ED78E3A2BDD4FB26A027 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED6542692638623F0058D239 /* Common.framework */,
 				F7BE202124346E390054C56D /* StaticFramework.framework */,
 				F7BE201E24346E330054C56D /* DynamicLib.framework */,
 				06623B1128429DBE5471113A /* libPods-iOS-Engineering.a */,

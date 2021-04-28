@@ -11,6 +11,7 @@
 //#import "DynamicObject.h"
 #import "HitView.h"
 #import "EmptyView.h"
+#import <Common/Common.h>
 @interface ViewController ()
 
 @end
