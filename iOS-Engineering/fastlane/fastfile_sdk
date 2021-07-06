@@ -1,0 +1,68 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+default_platform(:ios)
+platform :ios do
+  desc "Description of what the lane does"
+  lane :custom_lane do
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+end
+lane :build_t2t do |options|
+  # 配置变量
+  filename = options[:n]
+  targetName = "t2t"
+  debug = options[:debug]
+  version = options[:v]
+  all = [filename]
+  buildMode = "Release"
+  if "debug" == debug
+    buildMode = "Debug"
+  end
+  all.each do |name|
+    # build
+    Dir.chdir("..") do
+      # CPU 架构说明
+      # armv7：iPhone4｜iPhone4S｜iPad｜iPad2｜iPad3(The New iPad)｜iPad mini｜iPod Touch 3G｜iPod Touch4
+      # armv7s：iPhone5｜iPhone5C｜iPad4(iPad with Retina Display)
+      # arm64：iPhone 5S / iPhone 6 , iPhone 6 Plus / iPhone 6S , 6S Plus / iPhone 7 , 7 Plus, iPad (2018) /  iPhone 8, iPhone 8 Plus, and iPhone X
+      # arm64e: iphone XS、 iphone XS Max、 iphoneXR ++
+      # i386选择iPhone5以下的模拟器编译即可
+      # x86_64选择iPhone5s以上的模拟器编译即可
+      
+      sh("xcodebuild", "-project", "./t2t.xcodeproj",
+        "-target","#{targetName}",
+        "-configuration",buildMode,
+        "-sdk","iphoneos",
+        # "-arch","armv7s",
+        "-arch","arm64",
+        "-arch","arm64e",
+        "CONFIGURATION_BUILD_DIR=./build/#{filename}/#{version}")
+        
+      sh("xcodebuild", "-project", "./t2t.xcodeproj",
+        "-target","#{targetName}",
+        "-configuration",buildMode,
+        "-sdk","iphonesimulator",
+        "-arch","x86_64",
+        "CONFIGURATION_BUILD_DIR=./build/#{filename}/#{version}-simulator")
+      # sh("lipo","-create",
+      # "./build/#{filename}/#{version}/#{targetName}.framework/#{targetName}",
+      # "./build/#{filename}/#{version}-simulator/#{targetName}.framework/#{targetName}",
+      # "-output",
+      # "./build/#{filename}/#{version}/#{targetName}.framework/#{targetName}")
+      
+      # sh("rm", "./build/#{filename}/#{version}/#{targetName}.framework/Info.plist")
+      
+    end    
+  end
+end

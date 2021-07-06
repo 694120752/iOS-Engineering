@@ -1,0 +1,187 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+default_platform(:ios)
+podspecFileName = "DTMSDK.podspec"
+fainalFilePath = "DTM"
+licenseFile = "LICENSE"
+platform :ios do
+  desc "这是用来打包并上传云龙仓的脚本"
+  lane :custom_lane do
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+end
+  ## Dtm的framework打包
+  ## 默认打包口令 ：
+  ##      fastlane build_dtm
+  desc "合并打framework 可配置版本号和打包模式"
+  lane :build_dtm do |options|
+    debug = options[:debug]
+    version = options[:v]
+    if version
+      # 更新podspec中的版本号
+      version_bump_podspec(path: "./#{podspecFileName}", version_number: version)
+    else
+      # 读取podspec中的版本号
+      spec = read_podspec(path: "./#{podspecFileName}")
+      version = spec["version"]
+    end
+    # 未配置buildMode时 默认为Release
+    buildMode = "Release"
+    if "debug" == debug
+      buildMode = "Debug"
+    end
+    # 先编译socketframework
+    Dir.chdir("../Pods") do
+      sh("xcodebuild","-scheme","SocketRocket","-project","./Pods.xcodeproj","-configuration","#{buildMode}","-sdk","iphoneos","-arch","armv7s","-arch","arm64","-arch","arm64e","-arch","armv7")
+      sh("xcodebuild","-scheme","SocketRocket","-project","./Pods.xcodeproj","-configuration","#{buildMode}","-sdk","iphonesimulator","-arch","x86_64")
+      sh("cd ..")
+    end
+    # 执行打包
+    sh("fastlane","build_framework","debug:#{buildMode}","v:#{version}","n:DTMSDK")
+    sh("fastlane","build_resource","debug:#{buildMode}","v:#{version}","n:DTMResource")
+    # 合并压缩
+    zip_file = "./build/#{version}/#{fainalFilePath}/dtmiossdk-maven-#{version}.zip"
+    zip(path:"./#{licenseFile}/#{licenseFile}",output_path:zip_file)
+    zip(path:"./build/DTMSDK/#{version}/DTMSDK.framework",output_path:zip_file)
+    zip(path:"./build/DTMResource/#{version}/DTMResource.bundle",output_path:zip_file)
+    zip(path:"./DynamicTagManagerSDK/GRS/GRS_C.framework",output_path:zip_file)
+    zip(path:"./DynamicTagManagerSDK/HAFormal/HAFormalAnalytics.framework",output_path:zip_file)
+    zip(path:"./DynamicTagManagerSDK/HAFormal/HAFormal.bundle",output_path:zip_file)
+    # 执行第二次打包
+    sh("fastlane","build_framework","debug:#{buildMode}","v:#{version}","n:DTMSDK-rebuild")
+    sh("fastlane","build_resource","debug:#{buildMode}","v:#{version}","n:DTMResource-rebuild")
+    # 合并压缩
+    zip_file = "./build/#{version}/#{fainalFilePath}-rebuild/dtmiossdk-maven-#{version}.zip"
+    zip(path:"./#{licenseFile}/#{licenseFile}",output_path:zip_file)
+    zip(path:"./build/DTMSDK-rebuild/#{version}/DTMSDK.framework",output_path:zip_file)
+    zip(path:"./build/DTMResource-rebuild/#{version}/DTMResource.bundle",output_path:zip_file)
+    zip(path:"./DynamicTagManagerSDK/GRS/GRS_C.framework",output_path:zip_file)
+    zip(path:"./DynamicTagManagerSDK/HAFormal/HAFormalAnalytics.framework",output_path:zip_file)
+    zip(path:"./DynamicTagManagerSDK/HAFormal/HAFormal.bundle",output_path:zip_file)
+    
+  end
+  ## 打包资源文件
+  desc "build resource"
+  lane :build_resource do |options|
+    fileName = options[:n]
+    schemeName = "DTMResource"
+    debug = options[:debug]
+    version = options[:v]
+    all = [fileName]
+    buildMode = "Release"
+    if "debug" == debug
+      buildMode = "Debug"
+    end
+    all.each do |name|
+      # build
+      Dir.chdir("..") do
+        #compile framework
+        sh("xcodebuild", "-target", "./#{name}",
+          "-scheme","#{schemeName}",
+          "-configuration",buildMode,
+          "-sdk","iphoneos",
+          "CONFIGURATION_BUILD_DIR=./build/#{fileName}/#{version}")
+      end
+    end
+  end
+  ## 打包DTMFramework
+  desc "build DTMFramework framework for module"
+  lane :build_framework do |options|
+    # 配置变量
+    filename = options[:n]
+    targetName = "DTMSDK"
+    debug = options[:debug]
+    version = options[:v]
+    all = [filename]
+    buildMode = "Release"
+    if "debug" == debug
+      buildMode = "Debug"
+    end
+    all.each do |name|
+      # build
+      Dir.chdir("..") do
+        # CPU 架构说明
+        # armv7：iPhone4｜iPhone4S｜iPad｜iPad2｜iPad3(The New iPad)｜iPad mini｜iPod Touch 3G｜iPod Touch4
+        # armv7s：iPhone5｜iPhone5C｜iPad4(iPad with Retina Display)
+        # arm64：iPhone 5S / iPhone 6 , iPhone 6 Plus / iPhone 6S , 6S Plus / iPhone 7 , 7 Plus, iPad (2018) /  iPhone 8, iPhone 8 Plus, and iPhone X
+        # arm64e: iphone XS、 iphone XS Max、 iphoneXR ++
+        # i386选择iPhone5以下的模拟器编译即可
+        # x86_64选择iPhone5s以上的模拟器编译即可
+        
+        sh("xcodebuild", "-project", "./DynamicTagManagerSDK.xcodeproj",
+          "-target","#{targetName}",
+          "-configuration",buildMode,
+          "-sdk","iphoneos",
+          "-arch","armv7s",
+          "-arch","arm64",
+          "-arch","arm64e",
+          "CONFIGURATION_BUILD_DIR=./build/#{filename}/#{version}")
+          
+        sh("xcodebuild", "-project", "./DynamicTagManagerSDK.xcodeproj",
+          "-target","#{targetName}",
+          "-configuration",buildMode,
+          "-sdk","iphonesimulator",
+          "-arch","x86_64",
+          "CONFIGURATION_BUILD_DIR=./build/#{filename}/#{version}-simulator")
+        sh("lipo","-create",
+        "./build/#{filename}/#{version}/#{targetName}.framework/#{targetName}",
+        "./build/#{filename}/#{version}-simulator/#{targetName}.framework/#{targetName}",
+        "-output",
+        "./build/#{filename}/#{version}/#{targetName}.framework/#{targetName}")
+        
+        sh("rm", "./build/#{filename}/#{version}/#{targetName}.framework/Info.plist")
+        
+      end    
+    end
+  end
+      
+  # 上传dtm 合并版
+  desc "deploy dtm"
+  lane :deploy_dtm do |options|
+    all = ["dtmframework","dtmframework-rebuild"]
+  
+    all.each do |name|
+      spec = read_podspec(path:"./DTMSDK.podspec")
+      version = spec["version"]
+      filepath = "DTM"
+      if "dtmframework-rebuild" == name
+        filepath = "DTM-rebuild"
+      end
+      zip_path = "./build/#{version}/#{filepath}/dtmiossdk-maven-#{version}.zip"
+      artifactory(file:zip_path,
+        username: "cloudreleaserepo",
+        password: "cloudreleaserepo~!@",
+        endpoint:"http://szg1.artifactory.inhuawei.com/artifactory/",
+        repo:"Product-CloudReleaseRepo-release",
+        #上传正式流水线
+        repo_path:"com/huawei/cloudreleaserepo/dtmiossdk/#{name}/dtmiossdk-maven-#{version}.zip")
+        #上传测试流水线
+        #repo_path:"com/huawei/cloudreleaserepo/dtmiossdk/dtmiossdkapi/dtmiossdk-maven-#{version}.zip")
+    end
+  end
+  # 上传到云龙仓的包需要更改版本号
+  desc "设置版本号 自增最后一位 更新podspec"
+  lane :updateVersion do |options|
+    all = ["DynamicTagManagerSDK"]
+    version1 = options[:v]
+    all.each do |name|
+      spec = read_podspec(path: "./#{name}.podspec")
+      version = spec["version"]
+      versionArr = version.split(".")
+      lastNum = versionArr.last.to_i + 1
+      versionArr[3] = lastNum.to_s
+      version_bump_podspec(version_number: versionArr.join('.'))
+      UI.message "🔥🔥🔥   当前版本自增为 #{versionArr.join('.')}  🔥🔥🔥"
+    end
+  end
