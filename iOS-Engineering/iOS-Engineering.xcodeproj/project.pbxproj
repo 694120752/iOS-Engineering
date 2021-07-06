@@ -10,6 +10,7 @@
 		5D35B9EFA3B3B4C2BD0165EB /* libPods-iOS-EngineeringTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 752E03236ED414BB026F546F /* libPods-iOS-EngineeringTests.a */; };
 		82A192AA1684F61FCF432E71 /* libPods-iOS-Engineering.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06623B1128429DBE5471113A /* libPods-iOS-Engineering.a */; };
 		C9F2680CF5DE2EDC82F70193 /* libPods-iOS-EngineeringUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CF33CCE809D6A9D91531A9 /* libPods-iOS-EngineeringUITests.a */; };
+		ED35071A269495DD00647E46 /* AAA.m in Sources */ = {isa = PBXBuildFile; fileRef = ED350719269495DD00647E46 /* AAA.m */; };
 		ED65426A2638623F0058D239 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED6542692638623F0058D239 /* Common.framework */; };
 		ED65426B2638623F0058D239 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED6542692638623F0058D239 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F70277E923B5E9D300598E5D /* UIView+trickPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F70277E723B5E9D300598E5D /* UIView+trickPoint.m */; };
@@ -76,6 +77,8 @@
 		A0CF33CCE809D6A9D91531A9 /* libPods-iOS-EngineeringUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-EngineeringUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA81B18B678E074F92F091E3 /* Pods-iOS-Engineering.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Engineering.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-Engineering/Pods-iOS-Engineering.debug.xcconfig"; sourceTree = "<group>"; };
 		D4130A6D5B8092D874E44AA5 /* Pods-iOS-EngineeringUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-EngineeringUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-EngineeringUITests/Pods-iOS-EngineeringUITests.release.xcconfig"; sourceTree = "<group>"; };
+		ED350718269495DC00647E46 /* AAA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAA.h; sourceTree = "<group>"; };
+		ED350719269495DD00647E46 /* AAA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAA.m; sourceTree = "<group>"; };
 		ED6542692638623F0058D239 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70277E723B5E9D300598E5D /* UIView+trickPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+trickPoint.m"; sourceTree = "<group>"; };
 		F70277E823B5E9D300598E5D /* UIView+trickPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+trickPoint.h"; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 		F740CCEF22B9D61F00F92DAA /* TempComponents */ = {
 			isa = PBXGroup;
 			children = (
+				ED350718269495DC00647E46 /* AAA.h */,
+				ED350719269495DD00647E46 /* AAA.m */,
 				F70277EA23B5EC7000598E5D /* CalayerAbout */,
 				F70277E623B5E57600598E5D /* EagleEye */,
 				F740CCF022B9D63B00F92DAA /* DelayImage */,
@@ -461,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED35071A269495DD00647E46 /* AAA.m in Sources */,
 				F70282A32266D753006A8043 /* ViewController.m in Sources */,
 				F70277E923B5E9D300598E5D /* UIView+trickPoint.m in Sources */,
 				F740CCF622B9D8E100F92DAA /* DelayImage.m in Sources */,
