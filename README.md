@@ -119,5 +119,8 @@ end
 计量单位为 mWh （毫瓦时）
 
 ## pod的project中为什么有的是圈 有的是文件夹的target？
+
 pod会判断podspec中的文件配置 如果没有.m 则认为不需要编译 当成resource资源直接链接
 source_files 中增加了.m 他就变成了正常的target
+
+所以一般图片的bundle和资源 一类的在pod中都是圆圈；还有amap这种，amap中只有编译好的.a文件所以也被当成资源
