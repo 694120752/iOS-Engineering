@@ -117,3 +117,7 @@ end
 2. select id,timestamp,timeInterval,BundleID,ScreenOnTime from PLAppTimeService_Aggregate_AppRunTime where BundleID=''
 3. select sum(Energy)/1000.000 from PLAccountingOperator_Aggregate_RootNodeEnergy where NodeId='' and timestap=
 计量单位为 mWh （毫瓦时）
+
+## pod的project中为什么有的是圈 有的是文件夹的target？
+pod会判断podspec中的文件配置 如果没有.m 则认为不需要编译 当成resource资源直接链接
+source_files 中增加了.m 他就变成了正常的target
