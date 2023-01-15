@@ -124,3 +124,15 @@ pod会判断podspec中的文件配置 如果没有.m 则认为不需要编译 �
 source_files 中增加了.m 他就变成了正常的target
 
 所以一般图片的bundle和资源 一类的在pod中都是圆圈；还有amap这种，amap中只有编译好的.a文件所以也被当成资源
+
+
+
+## 使用自制的动态库 并在pod中引用了三方的库(使用了 useframework!) 这时候会报错 “dyld: Library not loaded”
+
+1. 用了useframework！ pod就会把引入的三方库变为动态库
+2. 报错的原因：Xcode去了这个依赖的FrameWork下面去查询库文件
+3. @rpath 为（Runpath search Paths） dyld搜索的路径
+4. 解决办法：
+        方法1.Build Phaese中用脚本复制。。。。 添加 Run Script （不推荐）
+        方法2.podfile中不要把这个（afk）库往动态库的target里写 往app里写 他就能找到了 （推荐）
+  
